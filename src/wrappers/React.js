@@ -19,7 +19,7 @@ const makeReactContainer = Component => {
 
     wrapVueChildren (children) {
       return {
-        render: createElement => createElement('div', children),
+        render: createElement => createElement(React.Fragment, null, children),
       }
     }
 
@@ -35,9 +35,7 @@ const makeReactContainer = Component => {
       const wrappedChildren = this.wrapVueChildren(children)
 
       return (
-        <Component {...rest}>
-          {children && <VueWrapper component={wrappedChildren} />}
-        </Component>
+        <Component {...rest}>{children && <VueWrapper component={wrappedChildren} />}</Component>
       )
     }
   }

@@ -308,7 +308,7 @@ var makeReactContainer = function makeReactContainer(Component) {
       value: function wrapVueChildren(children) {
         return {
           render: function render(createElement) {
-            return createElement('div', children);
+            return createElement(React.Fragment, null, children);
           }
         };
       }
