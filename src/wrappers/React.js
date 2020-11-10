@@ -44,7 +44,7 @@ const makeReactContainer = Component => {
 export default {
   props: ['component', 'passedProps'],
   render (createElement) {
-    return createElement('div', { ref: 'react' })
+    return createElement('Fragment', { ref: 'react' })
   },
   methods: {
     mountReactComponent (component) {

@@ -176,7 +176,7 @@ var wrapReactChildren = function wrapReactChildren(createElement, children) {
     props: {
       component: function component() {
         return React.createElement(
-          React.Fragment,
+          'div',
           null,
           children
         );
@@ -342,7 +342,7 @@ var makeReactContainer = function makeReactContainer(Component) {
 var ReactWrapper = {
   props: ['component', 'passedProps'],
   render: function render(createElement) {
-    return createElement('div', { ref: 'react' });
+    return createElement('Fragment', { ref: 'react' });
   },
 
   methods: {

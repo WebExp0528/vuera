@@ -8,7 +8,7 @@ const VUE_COMPONENT_NAME = 'vuera-internal-component-name'
 const wrapReactChildren = (createElement, children) =>
   createElement('vuera-internal-react-wrapper', {
     props: {
-      component: () => <React.Fragment>{children}</React.Fragment>,
+      component: () => <div>{children}</div>,
     },
   })
 
