@@ -170,7 +170,7 @@ var wrapReactChildren = function wrapReactChildren(createElement, children) {
     props: {
       component: function component() {
         return React.createElement(
-          'div',
+          React.Fragment,
           null,
           children
         );
@@ -308,7 +308,7 @@ var makeReactContainer = function makeReactContainer(Component) {
       value: function wrapVueChildren(children) {
         return {
           render: function render(createElement) {
-            return createElement(React.Fragment, null, children);
+            return createElement('div', children);
           }
         };
       }

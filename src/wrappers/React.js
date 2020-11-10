@@ -19,7 +19,7 @@ const makeReactContainer = Component => {
 
     wrapVueChildren (children) {
       return {
-        render: createElement => createElement(React.Fragment, null, children),
+        render: createElement => createElement('div', children),
       }
     }
 
